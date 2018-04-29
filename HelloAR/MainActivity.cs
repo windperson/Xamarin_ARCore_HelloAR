@@ -141,10 +141,9 @@ namespace HelloAR
             // Note that the order matters - GLSurfaceView is paused first so that it does not try
             // to query the session. If Session is paused before GLSurfaceView, GLSurfaceView may
             // still call mSession.update() and get a SessionPausedException.
-            mDisplayRotationHelper.OnPause();
-			mSurfaceView.OnPause();
-            if (mSession != null)
-    			mSession.Pause();
+            mDisplayRotationHelper?.OnPause();
+			mSurfaceView?.OnPause();
+		    mSession?.Pause();
 		}
 
 		public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
